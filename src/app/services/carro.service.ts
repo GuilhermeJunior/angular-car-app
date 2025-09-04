@@ -18,10 +18,5 @@ export class CarroService {
   findById(id: number): Observable<Carro> {
     return this.http.get<Carro>(`${this.API}/${id}`);
   }
-
-  deleteById(id: number): Observable<any> {
-    return this.http.delete<Carro>(`${this.API}/${id}`);
-  }
-
   constructor() { }
 }
