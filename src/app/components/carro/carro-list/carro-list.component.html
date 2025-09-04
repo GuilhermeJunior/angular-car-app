@@ -1,11 +1,14 @@
 <div class="container">
   <h1>Listagem de Carros</h1>
+  <br>
+  <button class="btn btn-primary" routerLink="/carros/new">Novo</button>
   <table class="table table-striped">
     <thead>
       <tr>
         <th>ID</th>
         <th>Carro</th>
         <th>Marca</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +19,9 @@
           </td>
           <td>{{carro.nome}}</td>
           <td>{{carro.marca}}</td>
+          <td>
+            <button type="button" class="btn btn-danger" (click)="deletar(carro.id)">Deletar</button>
+          </td>
         </tr>
       }
     </tbody>
