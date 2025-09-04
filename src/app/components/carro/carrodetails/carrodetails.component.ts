@@ -47,22 +47,27 @@ export class CarrodetailsComponent {
             icon: "success",
             confirmButtonText: 'Ok'
           });
+          this.router.navigate(['/carros']);
+        },
+        error: erro => {
+          console.error(erro);
         }
       });
-      this.router.navigate(['/carros']);
-
     } else {
       // editar carro
             this.carroService.update(carro).subscribe({
         next: () => {
-          Swal.fire({
+        Swal.fire({
             title: "Editado com Sucesso!",
             icon: "success",
             confirmButtonText: 'Ok'
           });
+          this.router.navigate(['/carros']);
+        },
+        error: erro => {
+          console.error(erro);
         }
       });
-      this.router.navigate(['/carros']);
     }
    }
 }
