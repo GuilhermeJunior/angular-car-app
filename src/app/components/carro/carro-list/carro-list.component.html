@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Listagem de Carros</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Carro</th>
+        <th>Marca</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (carro of carros; track carro.id) {
+        <tr>
+          <td>
+            <a href="" routerLink="/carros/{{carro.id}}">{{carro.id}}</a>
+          </td>
+          <td>{{carro.nome}}</td>
+          <td>{{carro.marca}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
