@@ -1,9 +1,21 @@
 <div class="container">
   <div class="card">
-  <div class="card-body">
-    <h5 class="card-title">{{carro.nome}}</h5>
-    <p class="card-text">Marca: {{carro.marca}}</p>
-    <button type="button" class="btn btn-primary">Editar</button>
+    <div class="card-body">
+      <form (ngSubmit)="salvar(carro)">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input id="nome" type="text" class="form-control" [(ngModel)]="carro.nome" name="nome" required>
+        </div>
+        <div class="mb-3">
+          <label for="marca" class="form-label">Marca</label>
+          <input id="marca" type="text" class="form-control" [(ngModel)]="carro.marca" name="marca" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
   </div>
 </div>
-</div>
+
+  <div *ngIf="backendErrors.marca" class="invalid-feedback">
+    {{ backendErrors.marca }}
+  </div>
