@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="d-flex justify-content-center">Listagem de Usuários</h1>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>email</th>
+        <th>Perfil</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (usuario of usuarios; track usuario.id) {
+        <tr>
+          <td>
+            <a href="#" routerLink="/admin/usuarios/{{usuario.id}}">{{usuario.id}}</a>
+          </td>
+          <td>{{usuario.nome}}</td>
+          <td>{{usuario.email}}</td>
+          <td>{{usuario.perfil}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
